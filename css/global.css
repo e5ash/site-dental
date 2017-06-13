@@ -1,0 +1,462 @@
+/*
+  SASS variables are information about icon's compiled state, stored under its original file name
+
+  .icon-home
+    width: $icon-home-width
+
+  The large array-like variables contain all information about a single icon
+  $icon-home: x y offset_x offset_y width height total_width total_height image_path
+
+  At the bottom of this section, we provide information about the spritesheet itself
+  $spritesheet: width height image $spritesheet-sprites
+  */
+/*
+  The provided mixins are intended to be used with the array-like variables
+
+  .icon-home
+    @include sprite-width($icon-home)
+
+  .icon-email
+    @include sprite($icon-email)
+
+  Example usage in HTML:
+    `display: block` sprite:
+    <div class="icon-home"></div>
+
+  To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class: */
+/*
+  The `sprites` mixin generates identical output to the CSS template
+    but can be overridden inside of SASS
+
+  @include sprites($spritesheet-sprites)
+  */
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font: 14px "Roboto", sans-serif;
+  color: #101010;
+  padding-top: 18px;
+  background: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: url("../img/bg/body.jpg") repeat-y center top;
+  background: #ff65fd;
+  background: -webkit-linear-gradient(left, #ff65fd 0%, #ff65fd 42%, #ffdd88 58%, #ffdd88 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#ff65fd), color-stop(42%, #ff65fd), color-stop(58%, #ffdd88), to(#ffdd88));
+  background: linear-gradient(to right, #ff65fd 0%, #ff65fd 42%, #ffdd88 58%, #ffdd88 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff65fd', endColorstr='#ffdd88',GradientType=1 ); }
+
+html, body, header, article, aside, main, footer, div, h1, h2, h3, h4, h5, h6, button, .show, .block {
+  display: block; }
+
+.inline-block {
+  display: inline-block; }
+
+meta, script, style, .hidden {
+  display: none; }
+
+a {
+  color: #101010;
+  text-decoration: none; }
+
+button, input[type="submit"] {
+  cursor: pointer; }
+
+button, input, textarea {
+  display: block;
+  outline: none;
+  border: none;
+  background: none;
+  font-family: "Roboto", sans-serif; }
+
+textarea {
+  resize: none; }
+
+ul, ol {
+  margin: 5px 0 5px 20px; }
+
+::-webkit-input-placeholder {
+  color: gray; }
+
+::-moz-placeholder {
+  color: gray; }
+
+:-ms-input-placeholder {
+  color: gray; }
+
+::placeholder {
+  color: gray; }
+
+.tal {
+  text-align: left; }
+
+.tac {
+  text-align: center; }
+
+.tar {
+  text-align: right; }
+
+.ttc {
+  text-transform: capitalize; }
+
+i.icon {
+  display: inline-block; }
+
+.italic, i {
+  font-style: italic; }
+
+.bold, b, strong {
+  font-weight: bold; }
+
+.btn, button {
+  display: block;
+  text-align: center;
+  cursor: pointer; }
+
+.border-yellow {
+  border: 1px solid #f3cc54; }
+
+.border-pink {
+  border: 1px solid #d900fa; }
+
+.border-3px {
+  -webkit-border-radius: 3px;
+          border-radius: 3px; }
+
+.container {
+  position: relative;
+  width: 1170px;
+  margin: 0 auto; }
+
+.row:before, .row:after, .clearfix:before, .clearfix:after {
+  display: table;
+  content: '';
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.row:after, .clearfix:after {
+  clear: both; }
+
+.w2 > .col {
+  width: 50%; }
+
+.w3 > .col {
+  width: 33.333333333%; }
+
+.w4 > .col {
+  width: 25%; }
+
+.w5 > .col {
+  width: 20%; }
+
+.w6 > .col {
+  width: 16.666666667%; }
+
+.col {
+  display: block;
+  float: left;
+  min-height: 1px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.panel {
+  padding: 42px 43px 38.09px;
+  padding-top: 55px;
+  padding-bottom: 38.09px;
+  -webkit-border-radius: 5px 5px 0 0;
+          border-radius: 5px 5px 0 0;
+  background: url("../img/bg/panel.jpg") repeat-x left top, #fff; }
+
+.panel__logo {
+  padding-top: 10px;
+  margin-right: 78px; }
+
+.panel__certif {
+  padding-top: 17px; }
+
+.panel__contacts {
+  float: right;
+  text-align: right;
+  font-size: 13.5px;
+  line-height: 24px; }
+
+.contacts__tel {
+  display: inline-block;
+  font-weight: bold; }
+  .contacts__tel:before {
+    position: relative;
+    display: inline-block;
+    content: '';
+    background-image: url(../img/sprite.png);
+    background-position: -50px -60px;
+    width: 15px;
+    height: 16px;
+    top: 3px;
+    margin-left: 4px;
+    margin-right: 2px; }
+
+.contacts__appointments {
+  color: #d900fa;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: 1px solid #d900fa; }
+
+.certif__text {
+  font-size: 18.5px;
+  color: #ea68fe;
+  font-family: 'Arial';
+  padding-bottom: 2px;
+  text-transform: uppercase; }
+
+.certif__img__item {
+  margin-right: 8px; }
+
+.slider img {
+  width: 100%; }
+
+.slick-prev, .slick-prev:hover {
+  display: block !important;
+  left: 45px;
+  background-image: url(../img/sprite.png);
+  background-position: -60px 0px;
+  width: 60px;
+  height: 60px; }
+
+.slick-next, .slick-next:hover {
+  display: block !important;
+  right: 45px;
+  background-image: url(../img/sprite.png);
+  background-position: 0px 0px;
+  width: 60px;
+  height: 60px; }
+
+.slick-arrow {
+  z-index: 10000; }
+  .slick-arrow:before {
+    display: none; }
+
+.main {
+  padding: 25px 30px 27px;
+  background: #fff; }
+
+.shadows {
+  position: relative;
+  display: block;
+  width: 540px;
+  border: 1px solid #DDDFE1;
+  padding: 20px;
+  -webkit-transition: .3s;
+  transition: .3s;
+  min-height: 1820px; }
+  .shadows:hover {
+    -webkit-box-shadow: 0px 0px 13px 0px #bbbbbb;
+            box-shadow: 0px 0px 13px 0px #bbbbbb; }
+
+.right {
+  float: right; }
+
+.services__stoma, .services__cosmetic {
+  width: 500px;
+  margin-bottom: 75px; }
+
+.services__stoma {
+  padding: 16px 30px;
+  -webkit-border-radius: 3px;
+          border-radius: 3px; }
+  .services__stoma .services__item {
+    -webkit-transition: .3s;
+    transition: .3s; }
+    .services__stoma .services__item:hover {
+      -webkit-box-shadow: 0px 0px 13px 0px #ffcc59;
+              box-shadow: 0px 0px 13px 0px #ffcc59; }
+
+.services__item__img {
+  overflow: hidden; }
+
+.services__title {
+  font-size: 20px;
+  margin-bottom: 10px; }
+
+.services__item {
+  position: relative;
+  width: 100%;
+  margin-bottom: 25px;
+  -webkit-border-radius: 2.5px;
+          border-radius: 2.5px; }
+  .services__item img {
+    z-index: 1;
+    position: relative;
+    -webkit-transition: all 1s ease-out;
+    transition: all 1s ease-out; }
+  .services__item:hover img {
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2); }
+  .services__item img {
+    width: 100%; }
+
+.services__stoma .services__item {
+  border: 1px solid #f3cc54; }
+
+.services__cosmetic .services__item {
+  border: 1px solid #d900fa; }
+
+.services__stoma .col {
+  width: 210px; }
+  .services__stoma .col:nth-of-type(odd) {
+    margin-right: 18px; }
+
+.services__item__img {
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear; }
+
+.services__item__title {
+  z-index: 2;
+  position: absolute;
+  font-size: 18px;
+  padding: 4px 10px;
+  background: rgba(255, 255, 255, 0.75); }
+
+.services__item__title_yellow {
+  color: #f3cc54;
+  top: 12px; }
+
+.services__item__title_pink {
+  color: #d900fa;
+  top: 17px; }
+
+.services__item__img img {
+  display: block; }
+
+.services__item__button {
+  display: block;
+  z-index: 10;
+  position: absolute;
+  bottom: 9px;
+  text-align: center;
+  margin: 0 auto;
+  width: 196px;
+  height: 40px;
+  line-height: 43px;
+  color: #fff;
+  border-bottom: 3px solid #7F697C;
+  -webkit-border-radius: 4px;
+          border-radius: 4px; }
+
+.button {
+  font-size: 15px; }
+
+.button_yellow {
+  background: #f3cc54;
+  left: 5.5px; }
+
+.button_pink {
+  background: #d900fa;
+  right: 14px; }
+
+.services__cosmetic {
+  float: right;
+  padding: 31px 30px 6px;
+  border: 1px solid #d900fa;
+  -webkit-border-radius: 3px;
+          border-radius: 3px; }
+  .services__cosmetic .services__title__text {
+    margin-top: 15px; }
+  .services__cosmetic .services__item {
+    -webkit-transition: .3s;
+    transition: .3s;
+    margin-bottom: 33px; }
+    .services__cosmetic .services__item:hover {
+      -webkit-box-shadow: 0px 0px 13px 0px #ed32ed;
+              box-shadow: 0px 0px 13px 0px #ed32ed; }
+
+.advantages__stoma, .advantages__cosmetic {
+  width: 500px;
+  padding: 0 30px 30px;
+  background: url("../img/bg/advantages.jpg") left top; }
+
+.advantages__title {
+  width: 230px;
+  display: block;
+  margin: -50px auto 30px;
+  text-align: center;
+  color: #fff;
+  font-size: 27px;
+  -webkit-border-radius: 5px;
+          border-radius: 5px;
+  text-transform: uppercase;
+  padding: 18px 0; }
+
+.advantages__title-size_big {
+  display: block;
+  font-size: 54px; }
+
+.advantages__title-light {
+  font-weight: 300; }
+
+.advantages__title_yellow {
+  background: #f3cc54; }
+
+.advantages__title_pink {
+  background: #d900fa; }
+
+.advantages__cosmetic {
+  float: right;
+  margin-top: 62px; }
+
+.advantages__item {
+  margin-bottom: 5px;
+  font-weight: 300;
+  font-size: 14px; }
+
+.advantages__stoma .advantages__item:before {
+  display: inline-block;
+  content: '';
+  background-image: url(../img/sprite.png);
+  background-position: -25px -60px;
+  width: 25px;
+  height: 27px;
+  position: relative;
+  top: 4px;
+  margin-right: 3px; }
+
+.advantages__cosmetic .advantages__item:before {
+  display: inline-block;
+  content: '';
+  background-image: url(../img/sprite.png);
+  background-position: 0px -60px;
+  width: 25px;
+  height: 27px;
+  position: relative;
+  top: 4px;
+  margin-right: 3px; }
+
+.map__title {
+  padding: 15px;
+  position: relative;
+  text-transform: uppercase;
+  color: #323232;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 300; }
+  .map__title:before, .map__title:after {
+    position: absolute;
+    display: inline-block;
+    content: '';
+    width: 344px;
+    height: 3px;
+    background: #f3cc54;
+    top: 39px; }
+  .map__title:before {
+    left: 0; }
+  .map__title:after {
+    right: 0; }
+
+.footer {
+  color: #fff;
+  text-align: center;
+  padding: 40px 15px 45px;
+  font-size: 20px;
+  font-weight: 300; }

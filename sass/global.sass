@@ -1,0 +1,405 @@
+@import "sprite"
+
+$c-black: #101010
+$c-white: #fff
+$c-yellow: #f3cc54
+$c-pink: #d900fa
+$fz: 14px
+$ff: 'Roboto', sans-serif
+
+
+*
+	margin: 0
+	padding: 0
+
+body
+	font: $fz $ff
+	color: $c-black
+	padding-top: 18px
+	background: $c-white
+	box-sizing: border-box
+	background: url('../img/bg/body.jpg') repeat-y center top
+	background: rgb(255,101,253);
+	background: -moz-linear-gradient(left,  rgba(255,101,253,1) 0%, rgba(255,101,253,1) 42%, rgba(255,221,136,1) 58%, rgba(255,221,136,1) 100%);
+	background: -webkit-linear-gradient(left,  rgba(255,101,253,1) 0%,rgba(255,101,253,1) 42%,rgba(255,221,136,1) 58%,rgba(255,221,136,1) 100%);
+	background: linear-gradient(to right,  rgba(255,101,253,1) 0%,rgba(255,101,253,1) 42%,rgba(255,221,136,1) 58%,rgba(255,221,136,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff65fd', endColorstr='#ffdd88',GradientType=1 );
+
+
+html, body, header, article, aside, main, footer, div, h1, h2, h3, h4, h5, h6, button, .show, .block
+	display: block
+
+.inline-block
+	display: inline-block
+
+meta, script, style, .hidden
+	display: none
+
+
+a
+	color: $c-black
+	text-decoration: none
+
+button, input[type="submit"]
+	cursor: pointer
+
+button, input, textarea
+	display: block
+	outline: none
+	border: none
+	background: none
+	font-family: $ff
+
+
+textarea
+	resize: none
+
+ul, ol
+	margin: 5px 0 5px 20px
+
+
+::placeholder
+	color: gray
+
+
+.tal
+	text-align: left
+
+.tac
+	text-align: center
+
+.tar
+	text-align: right
+
+.ttc
+	text-transform: capitalize
+
+i.icon
+	display: inline-block
+
+.italic, i
+	font-style: italic
+
+.bold, b, strong
+	font-weight: bold
+
+.btn, button
+	display: block
+	text-align: center
+	cursor: pointer
+
+
+.border-yellow
+	border: 1px solid $c-yellow
+
+.border-pink
+	border: 1px solid $c-pink
+
+.border-3px
+	border-radius: 3px
+
+
+.container
+	position: relative
+	width: 1170px
+	margin: 0 auto
+
+
+.row, .clearfix
+	&:before, &:after
+		display: table
+		content: ''
+		box-sizing: border-box
+	&:after
+		clear: both
+
+.w2 > .col
+	width: 50%
+.w3 > .col
+	width: 33.333333333%
+.w4 > .col
+	width: 25%
+.w5 > .col
+	width: 20%
+.w6 > .col
+	width: 16.666666667%
+
+
+.col
+	display: block
+	float: left
+	min-height: 1px
+	box-sizing: border-box
+
+.panel
+	padding: 42px 43px 38.09px
+	padding-top: 55px
+	padding-bottom: 38.09px
+	border-radius: 5px 5px 0 0
+	background: url('../img/bg/panel.jpg') repeat-x left top, $c-white
+
+
+.panel__logo
+	padding-top: 10px
+	margin-right: 78px
+
+.panel__certif
+	padding-top: 17px
+
+.panel__contacts
+	float: right
+	text-align: right
+	font-size: 13.5px
+	line-height: 24px
+
+.contacts__tel
+	display: inline-block
+	font-weight: bold
+	&:before
+		position: relative
+		display: inline-block
+		content: ''
+		@include sprite($tel)
+		top: 3px
+		margin-left: 4px
+		margin-right: 2px
+
+.contacts__appointments
+	color: #d900fa
+	text-transform: uppercase
+	font-weight: bold
+	border-bottom: 1px solid #d900fa
+
+.certif__text
+	font-size: 18.5px
+	color: #ea68fe
+	font-family: 'Arial'
+	padding-bottom: 2px
+	text-transform: uppercase
+
+.certif__img__item
+	margin-right: 8px
+
+.slider
+	img
+		width: 100%
+.slick-prev, .slick-prev:hover
+	display: block !important
+	left: 45px
+	@include sprite($arrow-prev)
+
+.slick-next, .slick-next:hover
+	display: block !important
+	right: 45px
+	@include sprite($arrow-next)
+	
+.slick-arrow
+	z-index: 10000
+	&:before
+		display: none
+
+
+
+.main
+	padding: 25px 30px 27px
+	background: $c-white
+
+.shadows
+	position: relative
+	display: block
+	width: 540px
+	border: 1px solid #DDDFE1
+	padding: 20px
+	transition: .3s
+	min-height: 1820px
+	&:hover
+		box-shadow: 0px 0px 13px 0px rgba(187,187,187,1)
+	
+.right
+	float: right
+
+.services__stoma, .services__cosmetic
+	width: 500px
+	margin-bottom: 75px
+
+.services__stoma
+	padding: 16px 30px
+	border-radius: 3px
+	.services__item
+		transition: .3s
+		&:hover
+			box-shadow: 0px 0px 13px 0px rgba(255,204,89,1)
+.services__item__img
+	overflow: hidden
+.services__title
+	font-size: 20px
+	margin-bottom: 10px
+
+.services__item
+	position: relative
+	width: 100%
+	margin-bottom: 25px
+	border-radius: 2.5px
+	img
+		z-index: 1
+		position: relative
+		transition: all 1s ease-out
+	&:hover
+		img
+			transform: scale(1.2)
+	img
+		width: 100%
+
+.services__stoma .services__item
+	border: 1px solid $c-yellow
+.services__cosmetic .services__item
+	border: 1px solid $c-pink
+
+.services__stoma .col
+	width: 210px
+	&:nth-of-type(odd)
+		margin-right: 18px
+
+.services__item__img
+	transition: 0.3s linear
+.services__item__title
+	z-index: 2
+	position: absolute
+	font-size: 18px
+	padding: 4px 10px
+	background: rgba(255,255,255,.75)
+
+.services__item__title_yellow
+	color: $c-yellow
+	top: 12px
+
+.services__item__title_pink
+	color: $c-pink
+	top: 17px
+
+.services__item__img
+	img
+		display: block
+.services__item__button
+	display: block
+	z-index: 10
+	position: absolute
+	bottom: 9px
+	text-align: center
+	margin: 0 auto
+	width: 196px
+	height: 40px
+	line-height: 43px
+	color: $c-white
+	border-bottom: 3px solid #7F697C
+	border-radius: 4px
+
+.button
+	font-size: 15px
+
+.button_yellow
+	background: $c-yellow
+	left: 5.5px
+.button_pink
+	background: $c-pink
+	right: 14px
+
+.services__cosmetic
+	float: right
+	padding: 31px 30px 6px
+	border: 1px solid $c-pink
+	border-radius: 3px
+	.services__title__text
+		margin-top: 15px
+	.services__item
+		transition: .3s
+		margin-bottom: 33px
+		&:hover
+			box-shadow: 0px 0px 13px 0px rgba(237,50,237,1)
+
+
+.advantages__stoma, .advantages__cosmetic
+	width: 500px
+	padding: 0 30px 30px
+	background: url('../img/bg/advantages.jpg') left top
+.advantages__title
+	width: 230px
+	display: block
+	margin: -50px auto 30px
+	text-align: center
+	color: $c-white
+	font-size: 27px
+	border-radius: 5px
+	text-transform: uppercase
+	padding: 18px 0
+
+.advantages__title-size_big
+	display: block
+	font-size: 54px
+
+.advantages__title-light
+	font-weight: 300
+
+.advantages__title_yellow
+	background: $c-yellow
+
+.advantages__title_pink
+	background: $c-pink
+
+.advantages__cosmetic
+	float: right
+	margin-top: 62px
+
+.advantages__item
+	margin-bottom: 5px
+	font-weight: 300
+	font-size: 14px
+
+.advantages__stoma
+	.advantages__item
+		&:before
+			display: inline-block
+			content: ''
+			@include sprite($check-yellow)
+			position: relative
+			top: 4px
+			margin-right: 3px
+.advantages__cosmetic
+	.advantages__item
+		&:before
+			display: inline-block
+			content: ''
+			@include sprite($check-pink)
+			position: relative
+			top: 4px
+			margin-right: 3px
+
+
+.map__title
+	padding: 15px
+	position: relative
+	text-transform: uppercase
+	color: #323232
+	text-align: center
+	font-size: 40px
+	font-weight: 300
+	&:before, &:after
+		position: absolute
+		display: inline-block
+		content: ''
+		width: 344px
+		height: 3px
+		background: $c-yellow
+		top: 39px
+	&:before
+		left: 0
+	&:after
+		right: 0
+
+
+.footer
+	color: $c-white
+	text-align: center
+	padding: 40px 15px 45px
+	font-size: 20px
+	font-weight: 300
